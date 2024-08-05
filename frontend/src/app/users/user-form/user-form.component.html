@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="shadow border p-4">
+    {{ editUserId ? "Update User" : "Add User" }}
+    <form [formGroup]="userForm">
+      <div class="flex flex-wrap">
+        <mat-form-field class="w-full">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput formControlName="name" />
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>Email</mat-label>
+          <input type="text" matInput formControlName="email" />
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>Age</mat-label>
+          <input type="number" matInput formControlName="age" />
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>Address</mat-label>
+          <input type="text" matInput formControlName="address" />
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" />
+        </mat-form-field>
+      </div>
+      <div class="flex justify-center space-x-10">
+        <button mat-raised-button *ngIf="!editUserId" (click)="addUser()">
+          Add
+        </button>
+        <button mat-raised-button *ngIf="editUserId" (click)="updateUser()">
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
